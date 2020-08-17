@@ -16,7 +16,7 @@
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Posedetection](/posedetection)
+[Posedetection](/posed)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---

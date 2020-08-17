@@ -1,6 +1,6 @@
-## Image Recognition Using deep Learning
+## Pong AI
 
-Deep learning project on CNN Hand gesture classification.
+The idea of the project is to Learn Reinforcement Learning and Game AI While teaching a Pong AI :smiley: .
 
 [![Alt text](https://img.youtube.com/vi/lEGTdrZBIqA/0.jpg)](https://youtu.be/lEGTdrZBIqA)
 
