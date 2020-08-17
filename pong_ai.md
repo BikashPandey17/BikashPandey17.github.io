@@ -1,6 +1,6 @@
 ## Pong AI
 
-The idea of the project is to Learn Reinforcement Learning and Game AI While teaching a Pong AI :smiley: .
+The idea of the project is to Learn Reinforcement Learning and Game AI While teaching a Pong AI `:smiley:` .
 
 [![Alt text](https://img.youtube.com/vi/lEGTdrZBIqA/0.jpg)](https://youtu.be/lEGTdrZBIqA)
 
