@@ -2,31 +2,34 @@
 
 ---
 
-### Category Name 1 
+### Projects
 
-[Project 1 Title](/sample_page)
+[Billing - Inventory Manageent System](https://github.com/BikashPandey17/stockBillingV2)
+<img src="images/sms_demo.png?raw=true"/>
+
+---
+[Image Recognition Using deep Learning](/hand_gx)
+<img src="images/handgx.png?raw=true"/>
+
+---
+[Pong AI](/pong_ai)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
+[Posedetection](/posedetection)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[Knowledge Graph](https://github.com/BikashPandey17/knowledge_graph)
+<img src="images/graph.png?raw=true"/>
 
 ---
-
-### Category Name 2
-
-- [Project 1 Title](http://example.com/)
-- [Project 2 Title](http://example.com/)
-- [Project 3 Title](http://example.com/)
-- [Project 4 Title](http://example.com/)
-- [Project 5 Title](http://example.com/)
+[Haikyuu](/haikyuu)
+<img src="images/haikyuu.jpg?raw=true"/>
 
 ---
-
+[Covid Map](/covid)
+<img src="images/covid.jpg?raw=true"/>
 
 
 
