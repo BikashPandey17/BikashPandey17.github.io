@@ -2,7 +2,7 @@
 
 ## Project Goal
 
-To make a System that fetches recently uploaded videos (related to a fixed keyword) and exposes the videos for search in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.
+To make a System that fetches recently uploaded videos (related to a fixed keyword) and exposes the videos for search in reverse chronological order of their publishing date-time from YouTube for a given tag/search query in a paginated response.[Github](https://github.com/BikashPandey17/youtube-app)
 
 Here's an Architechure diagram of the application
 
@@ -116,3 +116,15 @@ gunicorn --workers=2 myapp.wsgi:app -b localhost:8091
 docker build --tag youtube-app .
 docker run -d -p 8091:8091 --net="host" youtube-app
 ```
+
+## Improvements TODO- (9 June 2021)
+
+1. Databases - We are using two different databases here, Mongodb and Elasticsearch (which is a search engine), but in our case we can resort to using only elasticsearch. Also there will be data inconsistency if we have two sources of truths, synchronizing data in two different kind of databases is a scenario we might not want to have.
+
+2. Tests - We have incomplete tests as I write this, completing the tests would be nice.
+
+3. Pagination - The pagination for the search APIS has been implemented using `offset` and `limit` in databases and the sorting of the data based on the publised date. The logic looks something like this `Youtube.objects.order_by('-published_at').skip( offset ).limit( size )`. The problem with this approach is that it tries to sort the entire data first and then goes to an offset from which it tries to limit. Instead of this we can try to index the published_at date so that the sorting happens faster, also instead of offset we should try out cursor indexing where we directly go to the published_at time and limit from that point. (all of this can be acheived by indexing on published_at)
+
+4. Currently inorder to paginate on Elasticsearch we are using `size` and `from` keywords, which also kind of feels like offset. Instead we should try out `scroll` which fixes the data snapshot for certain time and on which we can paginate however we like.
+
+5. Points 3 and 4 unknowingly tries to address a major UX issue which happens in the current version because the schedular continously pools data in the background while the user makes searches and paginates over the result. What might happen is that while the user is on the page 3 or 4 of a search result when he/she comes back to page 1 will see entirely new results. 
