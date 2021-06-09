@@ -38,6 +38,10 @@
 
 <img src="images/covid.jpg?raw=true"/>
 
+---
+[Youtube app](/covid)
+
+<img src="images/yt-app-arch.png?raw=true"/>
 
 
 ---
