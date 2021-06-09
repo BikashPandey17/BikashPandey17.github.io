@@ -39,7 +39,7 @@
 <img src="images/covid.jpg?raw=true"/>
 
 ---
-[Youtube app](/covid)
+[Youtube app](/youtube)
 
 <img src="images/yt-app-arch.png?raw=true"/>
 
