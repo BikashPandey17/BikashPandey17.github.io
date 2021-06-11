@@ -128,3 +128,8 @@ docker run -d -p 8091:8091 --net="host" youtube-app
 4. Currently inorder to paginate on Elasticsearch we are using `size` and `from` keywords, which also kind of feels like offset. Instead we should try out `scroll` which fixes the data snapshot for certain time and on which we can paginate however we like.
 
 5. Points 3 and 4 unknowingly tries to address a major UX issue which happens in the current version because the schedular continously pools data in the background while the user makes searches and paginates over the result. What might happen is that while the user is on the page 3 or 4 of a search result when he/she comes back to page 1 will see entirely new results. 
+
+6. In the following code sample:
+ https://github.com/BikashPandey17/youtube-app/blob/8d445e178318278d58287163b9167cdbe517395a/myapp/source/tasks.py#L28-L41
+ 
+ once we have a default number of links from the youtube api we loop through each of the data and save it one at a time. We should try to save it one at a time.
