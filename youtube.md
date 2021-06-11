@@ -129,7 +129,24 @@ docker run -d -p 8091:8091 --net="host" youtube-app
 
 5. Points 3 and 4 unknowingly tries to address a major UX issue which happens in the current version because the schedular continously pools data in the background while the user makes searches and paginates over the result. What might happen is that while the user is on the page 3 or 4 of a search result when he/she comes back to page 1 will see entirely new results. 
 
-6. In the following code sample:
- https://github.com/BikashPandey17/youtube-app/blob/8d445e178318278d58287163b9167cdbe517395a/myapp/source/tasks.py#L28-L41
+6. In the following code sample [link]('https://github.com/BikashPandey17/youtube-app/blob/8d445e178318278d58287163b9167cdbe517395a/myapp/source/tasks.py#L28-L41')
+```
+        for data in response['items']:
+            data['video_id'] = data['id']['videoId']
+            data['published_at'] = datetime.datetime.fromisoformat(data['snippet']['publishedAt'][:-1])
+            del data['id']
+            try:
+                Youtube(**data).save()
+            except NotUniqueError:
+                continue
+            doc_to_insert = {
+                "title": data['snippet']['title'],
+                "description": data['snippet']['description'],
+            }
+            insert_index(id=str(data['video_id']), data=doc_to_insert)
+            print(doc_to_insert)
+```
+once we have a default number of links from the youtube api we loop through each of the data and save it one at a time. We should try to save it one at a time.
  
- once we have a default number of links from the youtube api we loop through each of the data and save it one at a time. We should try to save it one at a time.
+ 
+
